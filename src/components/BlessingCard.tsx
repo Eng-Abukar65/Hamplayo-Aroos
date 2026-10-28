@@ -3,7 +3,7 @@ import { Blessing } from '../types';
 
 interface BlessingCardProps {
   blessing: Blessing;
-  onLike: (id: string) => void;
+  onLike: (id: string, currentLikes: number) => void;
   isAdmin?: boolean;
   onModerate?: (id: string, isApproved: boolean) => void;
   onDelete?: (id: string) => void;
@@ -23,7 +23,7 @@ export const BlessingCard: React.FC<BlessingCardProps> = ({
     if (!hasLiked) {
       setHasLiked(true);
       setLocalLikes((prev) => prev + 1);
-      onLike(blessing.id);
+      onLike(blessing.id, localLikes);
     } else {
       setHasLiked(false);
       setLocalLikes((prev) => Math.max(0, prev - 1));

@@ -20,6 +20,7 @@ export interface Blessing {
 }
 
 export interface NewBlessingInput {
+  id?: string;
   event_slug?: string;
   guest_name: string;
   relationship: Relationship;

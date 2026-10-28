@@ -201,7 +201,7 @@ function HambalyoApiPlugin() {
               }
 
               const newBlessing = {
-                id: `blessing-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+                id: data.id || `blessing-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
                 event_slug: data.event_slug || "amina-and-farhan",
                 guest_name: String(guest_name).trim(),
                 relationship,
